@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/> 
+         
+    </h:head>
+    <h:body>
+        
+        <div class="container center">
+            <div class="jumbotron" align="center">
+                    <h:form>
+                        <h1>BMI Calculator</h1>
+                        <table>
+                            <tr>
+                                <td>Your Name</td>
+                                <td><h:inputText value="#{bMICalculatorBean.name}" class="form-control" a:placeholder="Your Name"></h:inputText></td>
+                            </tr>
+                            <br></br>
+                            <tr>
+                                <td>Your Weight</td>
+                                <td><h:inputText value="#{bMICalculatorBean.weight}" class="form-control"></h:inputText></td>
+                                <td>Kg</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Your Height</td>
+                                <td><h:inputText value="#{bMICalculatorBean.height}" class="form-control"></h:inputText></td>
+                                <td>m</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <h:commandButton class="btn btn-primary" value="Calculate BMI" action="#{bMICalculatorBean.calculateBMI()}"></h:commandButton>
+                                </td>
+                                <td><h:commandButton class="btn btn-primary" value="Clear" action="#{bMICalculatorBean.clearFields()}"></h:commandButton></td>
+                            </tr>
+                            
+                            <tr>
+                                <td align="left" colspan="3"><p>#{bMICalculatorBean.name}</p></td>
+                            </tr>
+                            <tr>
+                                <td align="left"  colspan="3"  >#{bMICalculatorBean.BMI}</td>
+                            </tr>
+                        </table>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>
+
